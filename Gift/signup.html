@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+   <!-- Floating particles -->
+    <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+    <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+    <div class="particle" style="left: 70%; animation-delay: 1s;"></div>
+    <div class="particle" style="left: 80%; animation-delay: 3s;"></div>
+    <div class="particle" style="left: 90%; animation-delay: 5s;"></div>
+
+   
+
+ <div class="signup-container ">
+        <div class="loginleft-section">
+            <div class="hexagon-container">
+                <div class="hexagon">
+                    <img src="Birthday_Desk-28-03 - Copy.webp" alt="Pink Gift" />
+                </div>
+                <div class="hexagon">
+                    <img src="pink gift.png" alt="Pink Vase" />
+                </div>
+                <div class="hexagon">
+                    <img src="pink vase.webp" alt="Blue Gift" />
+                </div>
+                <div class="hexagon">
+                    <img src="b4.png" alt="Cube" />
+                </div>
+                <div class="hexagon">
+                    <img src="cube.jpeg" alt="Birthday Setup" />
+                </div>
+                <div class="hexagon">
+                    <img src="blue gift.jpg" alt="Flowers" />
+                </div>
+               
+            </div>
+        </div>
+
+
+
+        <div class="right-section">
+            <div class="logo">
+                <div class="llogo-icon"><img src="nav logo.png"></div>
+                    <div class="navlogo-text">Heartfelt Hives</div>
+            </div>
+
+            <h2 class="form-title">Sign Up</h2>
+
+            <form id="signupForm">
+                <div class="form-group">
+                    <span class="input-icon"><i class="fa-solid fa-user"></i></span>
+                    <input type="text" class="form-input" id="nameInput" placeholder="Name">
+                </div>
+
+                <div class="form-group">
+                    <span class="input-icon"><i class="fa-solid fa-phone"></i></span>
+                    <input type="tel" class="form-input" id="mobileInput" placeholder="Mobile No">
+                </div>
+
+                <div class="form-group">
+                   <span class="input-icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" class="form-input" id="emailInput" placeholder="Email">
+                </div>
+
+                <div class="form-group">
+                     <span class="input-icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" class="form-input" id="passwordInput" placeholder="Password">
+                </div>
+
+                <div class="form-group">
+                         <span class="input-icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" class="form-input" id="confirmPasswordInput" placeholder="Confirm Password">
+                </div>
+
+                <button type="submit" class="signup-btn">SignUp</button>
+            </form>
+
+            <div class="divider">or</div>
+
+            <div class="social-buttons">
+                <button class="social-btn twitter-btn" type="button"><i class="fa-brands fa-twitter"></i></button>
+                        <button class="social-btn facebook-btn" type="button"><i class="fa-brands fa-facebook"></i></button>
+            </div>
+
+            <div class="login-link">
+                Already have account? <a href="login.html" id="loginLink">Login</a>
+            </div>
+        </div>
+    </div>
+
+    
+
+     
+    <script>
+        // Predefined data for double-click functionality
+        const predefinedData = {
+            name: "Anu",
+            mobile: "9857463210",
+            email: "anu45@gmail.com",
+            password: "**********",
+            confirmPassword: "**********"
+        };
+
+        // Update clock
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}`;
+        }
+
+        // Update clock every minute
+        updateClock();
+        setInterval(updateClock, 60000);
+
+        // Double-click functionality for input fields
+        document.getElementById('nameInput').addEventListener('dblclick', function() {
+            this.value = predefinedData.name;
+        });
+
+        document.getElementById('mobileInput').addEventListener('dblclick', function() {
+            this.value = predefinedData.mobile;
+        });
+
+        document.getElementById('emailInput').addEventListener('dblclick', function() {
+            this.value = predefinedData.email;
+        });
+
+        document.getElementById('passwordInput').addEventListener('dblclick', function() {
+            this.value = predefinedData.password;
+        });
+
+        document.getElementById('confirmPasswordInput').addEventListener('dblclick', function() {
+            this.value = predefinedData.confirmPassword;
+        });
+
+        // Form submission handler
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Sign up functionality would be implemented here!');
+        });
+
+        // Login link handler
+        document.getElementById('loginLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Login page would be loaded here!');
+        });
+
+        // Social button handlers
+        document.querySelector('.twitter-btn').addEventListener('click', function() {
+            alert('Twitter login would be implemented here!');
+        });
+
+        document.querySelector('.facebook-btn').addEventListener('click', function() {
+            alert('Facebook login would be implemented here!');
+        });
+    </script>
+  
+    
+    <script src="script.js"></script>
+</body>
+</html>

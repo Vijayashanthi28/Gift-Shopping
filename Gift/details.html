@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <!-- Floating particles -->
+    <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+    <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+    <div class="particle" style="left: 70%; animation-delay: 1s;"></div>
+    <div class="particle" style="left: 80%; animation-delay: 3s;"></div>
+    <div class="particle" style="left: 90%; animation-delay: 5s;"></div>
+
+    <!-- Header -->
+    <header class="nav-header">
+        <nav class="nav-container">
+            <div class="nav-logo">
+                <div class="navlogo-icon"><img src="nav logo.png"></div>
+                <span class="navlogo-text">Heartfelt Hues</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="login-btn">Login</button>
+                <button class="icon-btn">👤</button>
+                <button class="icon-btn">🛒</button>
+            </div>
+        </nav>
+    </header>
+
+     <div class="details-container">
+        <div class="breadcrumb">
+            <a href="#" style="color:#777; margin-left:50px;margin-top:50px">Birthday Gifts/</a><span class="current">Details</span>
+        </div>
+
+        <div class="dproduct-section">
+            <div class="dproduct-images">
+                <div class="thumbnail-list">
+                    <img src="thumb 1.png" alt="Cake thumbnail" class="thumbnail active">
+                    <img src="th2.png" alt="Bouquet thumbnail" class="thumbnail">
+                    <img src="th3.png" alt="Photos thumbnail" class="thumbnail">
+                </div>
+                <img src="th4.png" alt="Main product" class="main-image" id="mainImage">
+            </div>
+             
+            <div class="dproduct-info">
+                 <div class="detail-header">
+            <h1>Personalized Bouquet with Red Velvet Cake</h1>
+            <div class="detail-rating">
+                <div class="dstars">★★★★★</div>
+                <div class="drating-text">92 Ratings • 16 Reviews</div>
+            </div>
+        </div>
+                <div class="dprice-section">
+               
+                    <div class="dprice">Rs.1050</div>
+                    <div class="discount">20% Off</div>
+                </div>
+
+                <div class="variants">
+                    <h3>Select Variant</h3>
+                    <div class="variant-options">
+                        <div class="variant-option selected">
+                            <img src="th4.png" alt="Bouquet" class="variant-image">
+                            <div class="variant-price">Rs.450</div>
+                        </div>
+                        <div class="variant-option">
+                            <img src="thumb 1.png" alt="Cake" class="variant-image">
+                            <div class="variant-price">Rs.600</div>
+                        </div>
+                    </div>
+                </div>
+
+               
+            </div>
+        </div>
+        <section class="tab-section">
+        <div class="tabs">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="description">Description</button>
+                <button class="tab-button" data-tab="product-info">Product Info</button>
+            </div>
+            
+            <div class="tab-content">
+                <div class="tab-panel active" id="description">
+                    <div class="description-text">
+                        This stunning red velvet cake is adorned with beautiful roses and gypsos, creating a vibrant visual treat. The cake's moist layers are complemented by its rich, smooth texture, while the red and white colours make it a perfect celebration centrepiece. Accompanying the cake are three personalized fridge magnets featuring your picture and heartfelt birthday messages, making this a memorable gift.
+                    </div>
+
+                     <div class="daction-buttons">
+                    <button class="btn btn-wishlist">Add to Wishlist</button>
+                    <button class="btn btn-personalize">Personalization Now</button>
+                </div>
+                </div>
+                
+                <div class="tab-panel" id="product-info">
+                    <div class="product-details">
+                        <p><strong>SKU:</strong> JVS1390605</p>
+                        
+                        <h4>Constituents:</h4>
+                        <ul>
+                            <li>1.Fridge Magnet (3 units)</li>
+                            <li>2.Flowers</li>
+                            <li>3.Heavenly Red Velvet Cake</li>
+                        </ul>
+                        
+                        <h4>Specifications:</h4>
+                        <p><strong>4. Fridge Magnet (3 units)</strong></p>
+                        <ul>
+                            <li>a. Type: Fridge Magnet</li>
+                            <li>b. Size: 9.3 X 7.6 cm</li>
+                            <li>c.Material: Acrylic</li>
+                        </ul>
+                        
+                        <p><strong>5. Flowers</strong></p>
+                        <ul>
+                            <li>a. Type of Flowers: Gypso, Roses</li>
+                            <li>b. Colour of Flower: Pink</li>
+                        </ul>
+                        
+                        <p><strong>6. Heavenly Red Velvet Cake</strong></p>
+                        <ul>
+                            <li>a. Servings: 5-6</li>
+                            <li>b. Flavour: Red Velvet</li>
+                        </ul>
+                        
+                        <p><strong>7.Country of Origin:</strong> India</p>
+                        
+                        <div class="offers">
+                            <h4>Offers:</h4>
+                            <ul>
+                                <li>Assured cashback upto INR 100 using Paytm UPI Lite/UPI</li>
+                                <li>Flat Rs 50 cashback on a minimum order value of Rs 399</li>
+                                <li>Get Flat 10% off, for first time users</li>
+                                <li>Get Flat 10% Cashback, Use Code LOYAL</li>
+                                <li>Get assured cashback upto INR 200 on MOV of 699, via Pay with Rewards</li>
+                            </ul>
+
+                        </div>
+                         <div class="daction-buttons">
+                    <button class="btn btn-wishlist">Add to Wishlist</button>
+                    <button class="btn btn-personalize">Personalization Now</button>
+                </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    </section>
+<section class="featured-card">
+    <h2 style="color:#000;">Featured Products</h2>
+    <div class="cproducts-grid" style="padding:40px 80px;">
+            <div class="croduct-card">
+                <div class="cproduct-image"><img src="b1.png"></div>
+                <div class="cheart-icon"></div>
+                <div class="cproduct-info">
+                    <div class="cproduct-title">Personalized Birthday Cake</div>
+                    <div class="cproduct-price">Rs.700</div>
+                    <div class="cproduct-rating">
+                        <span class="rating-stars"></span>
+                        <span class="rating-number">4.8</span>
+                    </div>
+                    <div class="cproduct-features">
+                        <div class="feature">
+                            <span class="feature-icon personalize-icon"></span>
+                            <span>Personalizable</span>
+                        </div><br>
+                        <div class="feature">
+                            <span class="feature-icon delivery-icon"></span>
+                            <span>Same day Delivery</span>
+                        </div>
+                    </div>
+                    <button class="view-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="croduct-card">
+                <div class="cproduct-image"><img src="b2.webp"></div>
+                <div class="cheart-icon"></div>
+                <div class="cproduct-info">
+                    <div class="cproduct-title">Personalized Wooden Frame</div>
+                    <div class="cproduct-price">Rs.650</div>
+                    <div class="cproduct-rating">
+                        <span class="rating-stars"></span>
+                        <span class="rating-number">4.8</span>
+                    </div>
+                    <div class="cproduct-features">
+                        <div class="feature">
+                            <span class="feature-icon personalize-icon"></span>
+                            <span>Personalizable</span>
+                        </div><br>
+                        <div class="feature">
+                            <span class="feature-icon delivery-icon"></span>
+                            <span>Same day Delivery</span>
+                        </div>
+                    </div>
+                    <button class="view-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="croduct-card">
+                <div class="cproduct-image"><img src="b3.webp"></div>
+                <div class="cheart-icon"></div>
+                <div class="cproduct-info">
+                    <div class="cproduct-title">Personalized Cube LED</div>
+                    <div class="cproduct-price">Rs.750</div>
+                    <div class="cproduct-rating">
+                        <span class="rating-stars"></span>
+                        <span class="rating-number">4.8</span>
+                    </div>
+                    <div class="cproduct-features">
+                        <div class="feature">
+                            <span class="feature-icon personalize-icon"></span>
+                            <span>Personalizable</span>
+                        </div><br>
+                        <div class="feature">
+                            <span class="feature-icon delivery-icon"></span>
+                            <span>Same day Delivery</span>
+                        </div>
+                    </div>
+                    <button class="view-details-btn">View Details</button>
+                </div>
+            </div>
+    </div>
+    </section>
+       <footer class="footer">
+    <div class="top-info">
+      <div>
+        <i class="fas fa-truck-fast"></i>
+        <h4>Fast Shipping</h4>
+        <p>Fast shipping on all orders</p>
+      </div>
+      <div>
+        <i class="fas fa-rotate-left"></i>
+        <h4>Easy Return</h4>
+        <p>We will arrange pickup if the product is defected or damaged</p>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>Subscribe</h4>
+        <p>Stay connected with our newest arrival</p>
+        <input type="email" placeholder="Email">
+        <button>Subscribe</button>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="account.html">Track My Order</a></li>
+          <li><a href="#">Manage Account</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="birthday.html">Birthday</a></li>
+          <li><a href="aniversary.html">Anniversary</a></li>
+          <li><a href="wedding.html">Wedding</a></li>
+          <li><a href="home.html">Home & Living</a></li>
+          <li><a href="corporate.html">Corporate</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-phone"></i> 9087654321</p>
+        <p><i class="fas fa-envelope"></i> hi@hearty.com</p>
+        <h4>Follow us</h4>
+        <div class="socials">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>Copyrights © 2014 Heartfelt Hues. all rights reserved.</p>
+    </div>
+  </footer>
+    <script>
+         // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and panels
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanels.forEach(panel => panel.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding panel
+                button.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+
+        // Variant selection
+        const variantOptions = document.querySelectorAll('.variant-option');
+        
+        variantOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove selected class from all options
+                variantOptions.forEach(opt => opt.classList.remove('selected'));
+                
+                // Add selected class to clicked option
+                option.classList.add('selected');
+            });
+        });
+
+        // Thumbnail functionality
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.getElementById('mainImage');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', () => {
+                // Remove active class from all thumbnails
+                thumbnails.forEach(thumb => thumb.classList.remove('active'));
+                
+                // Add active class to clicked thumbnail
+                thumbnail.classList.add('active');
+                
+                // Update main image (in a real app, you'd change the src)
+                // mainImage.src = thumbnail.src;
+            });
+        });
+
+        // Button interactions
+        document.querySelector('.btn-wishlist').addEventListener('click', () => {
+            alert('Added to Wishlist!');
+        });
+
+        document.querySelector('.btn-personalize').addEventListener('click', () => {
+            alert('Proceeding to Personalization!');
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

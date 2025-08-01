@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+     <!-- Floating particles -->
+    <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+    <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+    <div class="particle" style="left: 70%; animation-delay: 1s;"></div>
+    <div class="particle" style="left: 80%; animation-delay: 3s;"></div>
+    <div class="particle" style="left: 90%; animation-delay: 5s;"></div>
+
+    <!-- Header -->
+    <header class="nav-header">
+        <nav class="nav-container">
+            <div class="nav-logo">
+                <div class="navlogo-icon"><img src="nav logo.png"></div>
+                <span class="navlogo-text">Heartfelt Hues</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="login-btn">Login</button>
+                <button class="icon-btn">👤</button>
+                <button class="icon-btn">🛒</button>
+            </div>
+        </nav>
+    </header>
+
+     <div class="upload-container">
+        <div class="upload-left-section">
+            <div class="upload-main-dropzone" id="uploadMainDropzone">
+                <div class="upload-dropzone-title" id="uploadDropzoneTitle">Upload Image 1</div>
+                <div class="upload-cloud-icon"></div>
+                <div class="upload-dropzone-text">Drag or Drop an asset here</div>
+            </div>
+            
+            <!-- Uploaded Images Preview -->
+            <div class="uploaded-images-preview" id="uploadedImagesPreview">
+                <!-- Uploaded images will appear here -->
+            </div>
+        </div>
+
+        <div class="upload-right-section">
+            <h1 class="upload-title-main">Personalized Bouquet with Red Velvet Cake</h1>
+            <p class="upload-subtitle">Start Personalizing</p>
+            
+            <div class="upload-step-progress">
+                <div class="upload-step-item upload-step-active" id="uploadStep1">
+                    <div class="upload-step-number">1</div>
+                    <div class="upload-step-text">Step 1</div>
+                </div>
+                <div class="upload-step-item upload-step-inactive" id="uploadStep2">
+                    <div class="upload-step-number">2</div>
+                    <div class="upload-step-text">Step 2</div>
+                </div>
+                <div class="upload-step-item upload-step-inactive" id="uploadStep3">
+                    <div class="upload-step-number">3</div>
+                    <div class="upload-step-text">Step 3</div>
+                </div>
+            </div>
+
+            <div class="upload-progress-bar">
+                <div class="upload-progress-fill" id="uploadProgressFill" style="width: 33.33%"></div>
+            </div>
+
+            <div class="upload-time-indicator">
+                <span>⏱</span>
+                <span>It takes just about a minute</span>
+            </div>
+
+            <button class="upload-btn upload-btn-primary" style="width: 100%; margin-bottom: 20px;" id="uploadImageBtn">
+                Upload Image <span id="uploadImageNumber">1</span> 📷
+            </button>
+
+            <div class="upload-predefined-images" id="uploadPredefinedSection">
+                <div class="upload-predefined-title">Image <span id="uploadPredefinedNumber">1</span></div>
+                <div class="upload-predefined-grid" id="uploadPredefinedGrid">
+                    <!-- Predefined images will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="upload-navigation-btns" style=" justify-content: flex-end; margin: 20px 0;">
+                <button class="upload-btn upload-btn-secondary upload-hidden" id="uploadPrevBtnRight">Previous step</button>
+            </div>
+                 
+            
+            <div class="upload-guidelines">
+                <div class="upload-guideline-item">
+                    <div class="upload-guideline-number">1</div>
+                    <div>Please upload good quality image</div>
+                </div>
+                <div class="upload-guideline-item">
+                    <div class="upload-guideline-number">2</div>
+                    <div>Please ensure you have rights to use the image</div>
+                </div>
+                <div class="upload-guideline-item">
+                    <div class="upload-guideline-number">3</div>
+                    <div>Emoticons are not allowed</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Modal -->
+    <div class="upload-modal-overlay" id="uploadModalOverlay">
+        <div class="upload-modal-content">
+            <div class="upload-modal-header">
+                <h3>Upload Image <span id="uploadModalImageNumber">1</span></h3>
+                <button class="upload-modal-close" id="uploadModalClose">&times;</button>
+            </div>
+            <div class="upload-file-tabs">
+                <div class="upload-tab-btn upload-tab-active">
+                    <div class="upload-tab-icon">📁</div>
+                    <div>My Files</div>
+                </div>
+                <div class="upload-tab-btn">
+                    <div class="upload-tab-icon">🌐</div>
+                    <div>Browse</div>
+                </div>
+            </div>
+            
+            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+            
+            <div class="upload-modal-dropzone" id="uploadModalDropzone">
+                <div class="upload-cloud-icon"></div>
+                <div class="upload-dropzone-text">Drag or Drop an asset here or click to browse</div>
+            </div>
+            
+            <!-- Predefined Images in Modal -->
+            <div class="upload-predefined-images" id="uploadModalPredefinedSection">
+                <div class="upload-predefined-title">Or choose from predefined images:</div>
+                <div class="upload-predefined-grid" id="uploadModalPredefinedGrid">
+                    <!-- Predefined images will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="upload-navigation-btns">
+                <button class="upload-btn upload-btn-secondary upload-hidden" id="uploadModalPrevBtn">Previous step</button>
+                <button class="upload-btn upload-btn-primary" id="uploadModalNextBtn">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="top-info">
+      <div>
+        <i class="fas fa-truck-fast"></i>
+        <h4>Fast Shipping</h4>
+        <p>Fast shipping on all orders</p>
+      </div>
+      <div>
+        <i class="fas fa-rotate-left"></i>
+        <h4>Easy Return</h4>
+        <p>We will arrange pickup if the product is defected or damaged</p>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>Subscribe</h4>
+        <p>Stay connected with our newest arrival</p>
+        <input type="email" placeholder="Email">
+        <button>Subscribe</button>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="account.html">Track My Order</a></li>
+          <li><a href="#">Manage Account</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="birthday.html">Birthday</a></li>
+          <li><a href="aniversary.html">Anniversary</a></li>
+          <li><a href="wedding.html">Wedding</a></li>
+          <li><a href="home.html">Home & Living</a></li>
+          <li><a href="corporate.html">Corporate</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-phone"></i> 9087654321</p>
+        <p><i class="fas fa-envelope"></i> hi@hearty.com</p>
+        <h4>Follow us</h4>
+        <div class="socials">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>Copyrights © 2014 Heartfelt Hues. all rights reserved.</p>
+    </div>
+  </footer>
+
+    <script>
+      class UploadImageManager {
+    constructor() {
+        this.currentStep = 1;
+        this.totalSteps = 3;
+        this.selectedImages = {};
+        this.uploadedImages = {};
+        this.predefinedImages = {
+            1: [
+                { id: 'img1_1', src: 'Anniversary_desk_10-03-2025 - Copy.webp', label: 'Couple Photo 1' },
+            ],
+            2: [
+                { id: 'img1_1', src: 'Anniversary_desk_10-03-2025 - Copy.webp', label: 'Couple Photo 1' },
+                { id: 'img1_2', src: 'personalised-timeless-treasure-photo-frame_2 - Copy.webp', label: 'Couple Photo 2' },
+            ],
+            3: [
+                { id: 'img1_1', src: 'Anniversary_desk_10-03-2025 - Copy.webp', label: 'Couple Photo 1' },
+                { id: 'img1_2', src: 'personalised-timeless-treasure-photo-frame_2 - Copy.webp', label: 'Couple Photo 2' },
+                { id: 'img1_3', src: 'rangoli.png', label: 'Couple Photo 3' }
+            ]
+        };
+        
+        this.initializeElements();
+        this.setupEventListeners();
+        this.updateUI();
+    }
+
+    initializeElements() {
+        this.dropzoneTitle = document.getElementById('uploadDropzoneTitle');
+        this.prevBtnRight = document.getElementById('uploadPrevBtnRight');
+        this.uploadImageBtn = document.getElementById('uploadImageBtn');
+        this.imageNumber = document.getElementById('uploadImageNumber');
+        this.predefinedNumber = document.getElementById('uploadPredefinedNumber');
+        this.progressFill = document.getElementById('uploadProgressFill');
+        this.predefinedGrid = document.getElementById('uploadPredefinedGrid');
+        this.predefinedSection = document.getElementById('uploadPredefinedSection');
+        this.modalOverlay = document.getElementById('uploadModalOverlay');
+        this.modalClose = document.getElementById('uploadModalClose');
+        this.mainDropzone = document.getElementById('uploadMainDropzone');
+        this.uploadedImagesPreview = document.getElementById('uploadedImagesPreview');
+        this.modalImageNumber = document.getElementById('uploadModalImageNumber');
+        this.modalDropzone = document.getElementById('uploadModalDropzone');
+        this.fileInput = document.getElementById('fileInput');
+        this.modalPredefinedGrid = document.getElementById('uploadModalPredefinedGrid');
+        this.modalPredefinedSection = document.getElementById('uploadModalPredefinedSection');
+        this.modalNextBtn = document.getElementById('uploadModalNextBtn');
+        this.modalPrevBtn = document.getElementById('uploadModalPrevBtn');
+    }
+
+    setupEventListeners() {
+        this.prevBtnRight.addEventListener('click', () => this.handlePrevious());
+        this.uploadImageBtn.addEventListener('click', () => this.openUploadModal());
+        this.modalClose.addEventListener('click', () => this.closeUploadModal());
+        this.modalOverlay.addEventListener('click', (e) => {
+            if (e.target === this.modalOverlay) {
+                this.closeUploadModal();
+            }
+        });
+        this.mainDropzone.addEventListener('click', () => this.openUploadModal());
+        
+        // Modal dropzone events
+        this.modalDropzone.addEventListener('click', () => this.fileInput.click());
+        this.modalDropzone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            this.modalDropzone.style.background = '#f0f0f0';
+        });
+        this.modalDropzone.addEventListener('dragleave', () => {
+            this.modalDropzone.style.background = '#fafafa';
+        });
+        this.modalDropzone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            this.modalDropzone.style.background = '#fafafa';
+            this.handleFileUpload(e.dataTransfer.files[0]);
+        });
+        
+        // File input change
+        this.fileInput.addEventListener('change', (e) => {
+            if (e.target.files[0]) {
+                this.handleFileUpload(e.target.files[0]);
+            }
+        });
+        
+        // Modal navigation buttons
+        this.modalPrevBtn.addEventListener('click', () => this.handleModalPrevious());
+        this.modalNextBtn.addEventListener('click', () => this.handleModalNext());
+    }
+
+    handleFileUpload(file) {
+        if (file && file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                this.uploadedImages[this.currentStep] = {
+                    id: `uploaded_${this.currentStep}`,
+                    src: e.target.result,
+                    label: file.name
+                };
+                this.selectedImages[this.currentStep] = this.uploadedImages[this.currentStep];
+                this.updateUploadedImagesPreview();
+                this.updatePredefinedImages();
+                
+                // Show success message and enable next button
+                alert(`Image ${this.currentStep} uploaded successfully!`);
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+    updateUI() {
+        // Update step indicators
+        for (let i = 1; i <= this.totalSteps; i++) {
+            const stepElement = document.getElementById(`uploadStep${i}`);
+            stepElement.className = 'upload-step-item';
+            
+            if (i < this.currentStep) {
+                stepElement.classList.add('upload-step-completed');
+            } else if (i === this.currentStep) {
+                stepElement.classList.add('upload-step-active');
+            } else {
+                stepElement.classList.add('upload-step-inactive');
+            }
+        }
+
+        // Update progress bar
+        const progressPercentage = (this.currentStep / this.totalSteps) * 100;
+        this.progressFill.style.width = `${progressPercentage}%`;
+
+        // Update titles and numbers
+        this.dropzoneTitle.textContent = `Upload Image ${this.currentStep}`;
+        this.imageNumber.textContent = this.currentStep.toString();
+        this.predefinedNumber.textContent = this.currentStep.toString();
+        this.modalImageNumber.textContent = this.currentStep.toString();
+
+        // Update navigation buttons
+        if (this.currentStep === 1) {
+            this.prevBtnRight.classList.add('upload-hidden');
+        } else {
+            this.prevBtnRight.classList.remove('upload-hidden');
+        }
+
+        // Update modal previous button
+        if (this.currentStep === 1) {
+            this.modalPrevBtn.classList.add('upload-hidden');
+        } else {
+            this.modalPrevBtn.classList.remove('upload-hidden');
+        }
+
+        // Update modal next button text
+        if (this.currentStep === this.totalSteps) {
+            this.modalNextBtn.textContent = 'Complete';
+        } else {
+            this.modalNextBtn.textContent = 'Next';
+        }
+
+        // Update uploaded images preview
+        this.updateUploadedImagesPreview();
+
+        // Show predefined images section
+        this.updatePredefinedImages();
+    }
+
+    updateUploadedImagesPreview() {
+        this.uploadedImagesPreview.innerHTML = '';
+        
+        Object.keys(this.selectedImages).forEach(step => {
+            const image = this.selectedImages[step];
+            const imageItem = document.createElement('div');
+            imageItem.className = 'uploaded-image-item';
+            imageItem.innerHTML = `
+                <img src="${image.src}" alt="${image.label}" class="uploaded-image-preview">
+                <div>Image ${step}</div>
+            `;
+            this.uploadedImagesPreview.appendChild(imageItem);
+        });
+    }
+
+    updatePredefinedImages() {
+        const images = this.predefinedImages[this.currentStep];
+        this.predefinedGrid.innerHTML = '';
+
+        images.forEach(image => {
+            const imageItem = document.createElement('div');
+            imageItem.className = 'upload-predefined-item';
+            imageItem.innerHTML = `
+                <img src="${image.src}" alt="${image.label}" class="upload-predefined-img">
+                <div class="upload-predefined-label">${image.label}</div>
+            `;
+            
+            imageItem.addEventListener('click', () => {
+                // Remove selection from other images
+                this.predefinedGrid.querySelectorAll('.upload-predefined-item').forEach(item => {
+                    item.classList.remove('upload-selected');
+                });
+                
+                // Select current image
+                imageItem.classList.add('upload-selected');
+                this.selectedImages[this.currentStep] = image;
+                this.updateUploadedImagesPreview();
+            });
+
+            this.predefinedGrid.appendChild(imageItem);
+        });
+
+        // Restore selection if exists
+        if (this.selectedImages[this.currentStep]) {
+            const selectedId = this.selectedImages[this.currentStep].id;
+            const items = this.predefinedGrid.querySelectorAll('.upload-predefined-item');
+            images.forEach((image, index) => {
+                if (image.id === selectedId && items[index]) {
+                    items[index].classList.add('upload-selected');
+                }
+            });
+        }
+    }
+
+    handleNext() {
+        if (this.currentStep < this.totalSteps) {
+            this.currentStep++;
+            this.updateUI();
+        } else {
+            // Complete process - redirect to details.html
+            this.redirectToDetails();
+        }
+    }
+
+    handleModalNext() {
+        if (this.currentStep < this.totalSteps) {
+            this.currentStep++;
+            this.updateUI();
+            this.updateModalPredefinedImages();
+            // Keep modal open to upload next image
+        } else {
+            // Complete process - redirect to details.html
+            this.closeUploadModal();
+            this.redirectToDetails();
+        }
+    }
+
+    handleModalPrevious() {
+        if (this.currentStep > 1) {
+            this.currentStep--;
+            this.updateUI();
+            this.updateModalPredefinedImages();
+            // Keep modal open
+        }
+    }
+
+    handlePrevious() {
+        if (this.currentStep > 1) {
+            this.currentStep--;
+            this.updateUI();
+        }
+    }
+
+    openUploadModal() {
+        this.modalOverlay.style.display = 'flex';
+        this.updateModalPredefinedImages();
+    }
+
+    updateModalPredefinedImages() {
+        const images = this.predefinedImages[this.currentStep];
+        this.modalPredefinedGrid.innerHTML = '';
+
+        images.forEach(image => {
+            const imageItem = document.createElement('div');
+            imageItem.className = 'upload-predefined-item';
+            imageItem.innerHTML = `
+                <img src="${image.src}" alt="${image.label}" class="upload-predefined-img">
+                <div class="upload-predefined-label">${image.label}</div>
+            `;
+            
+            imageItem.addEventListener('click', () => {
+                // Remove selection from other images
+                this.modalPredefinedGrid.querySelectorAll('.upload-predefined-item').forEach(item => {
+                    item.classList.remove('upload-selected');
+                });
+                
+                // Select current image
+                imageItem.classList.add('upload-selected');
+                this.selectedImages[this.currentStep] = image;
+                this.updateUploadedImagesPreview();
+            });
+
+            this.modalPredefinedGrid.appendChild(imageItem);
+        });
+
+        // Restore selection if exists
+        if (this.selectedImages[this.currentStep]) {
+            const selectedId = this.selectedImages[this.currentStep].id;
+            const items = this.modalPredefinedGrid.querySelectorAll('.upload-predefined-item');
+            images.forEach((image, index) => {
+                if (image.id === selectedId && items[index]) {
+                    items[index].classList.add('upload-selected');
+                }
+            });
+        }
+    }
+
+    closeUploadModal() {
+        this.modalOverlay.style.display = 'none';
+    }
+
+    // Method to redirect to details.html
+    redirectToDetails() {
+        // Optional: Save selected images to localStorage before redirecting
+        localStorage.setItem('selectedImages', JSON.stringify(this.selectedImages));
+        
+        // Redirect to details.html
+        window.location.href = 'personalized.html';
+    }
+
+    // Optional: Method to validate if all steps have selected images
+    validateCompletion() {
+        for (let i = 1; i <= this.totalSteps; i++) {
+            if (!this.selectedImages[i]) {
+                alert(`Please select an image for Step ${i} before completing.`);
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Enhanced handleModalNext with validation
+    handleModalNextWithValidation() {
+        if (this.currentStep < this.totalSteps) {
+            this.currentStep++;
+            this.updateUI();
+            this.updateModalPredefinedImages();
+        } else {
+            // Validate completion before redirecting
+            if (this.validateCompletion()) {
+                this.closeUploadModal();
+                this.redirectToDetails();
+            }
+        }
+    }
+}
+
+// Initialize the upload manager when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    new UploadImageManager();
+});
+        </script>
+</body>
+</html>

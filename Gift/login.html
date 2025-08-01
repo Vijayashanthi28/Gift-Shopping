@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+     <!-- Floating particles -->
+    <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+    <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+    <div class="particle" style="left: 70%; animation-delay: 1s;"></div>
+    <div class="particle" style="left: 80%; animation-delay: 3s;"></div>
+    <div class="particle" style="left: 90%; animation-delay: 5s;"></div>
+
+   
+
+
+    <div class="login1-container">
+        <div class="loginleft-section">
+            <div class="hexagon-container">
+                <div class="hexagon">
+                    <img src="Birthday_Desk-28-03 - Copy.webp" alt="Pink Gift" />
+                </div>
+                <div class="hexagon">
+                    <img src="pink gift.png" alt="Pink Vase" />
+                </div>
+                <div class="hexagon">
+                    <img src="pink vase.webp" alt="Blue Gift" />
+                </div>
+                <div class="hexagon">
+                    <img src="b4.png" alt="Cube" />
+                </div>
+                <div class="hexagon">
+                    <img src="cube.jpeg" alt="Birthday Setup" />
+                </div>
+                <div class="hexagon">
+                    <img src="blue gift.jpg" alt="Flowers" />
+                </div>
+               
+            </div>
+        </div>
+
+          
+        <div class="right-section">
+            <div class="login-container">
+                <div class="llogo">
+                   <div class="llogo-icon"><img src="nav logo.png"></div>
+                    <div class="navlogo-text">Heartfelt Hives</div>
+                </div>
+                
+                <h1 class="login-title">Log In</h1>
+                
+                <form>
+                    <div class="form-group">
+                        <div class="input-container">
+                          <span class="input-icon"><i class="fa-solid fa-envelope"></i></span>
+                            <input type="email" class="form-input" id="emailInput" placeholder="Email" autocomplete="off">
+                            <div class="suggestion-list" id="emailSuggestions">
+                                <div class="suggestion-item" data-value="anu45@gmail.com">anu45@gmail.com</div>
+                                <div class="suggestion-item" data-value="john.doe@gmail.com">john.doe@gmail.com</div>
+                                <div class="suggestion-item" data-value="sarah.smith@yahoo.com">sarah.smith@yahoo.com</div>
+                                <div class="suggestion-item" data-value="mike.wilson@outlook.com">mike.wilson@outlook.com</div>
+                                <div class="suggestion-item" data-value="emma.brown@gmail.com">emma.brown@gmail.com</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="input-container">
+                            <span class="input-icon"><i class="fa-solid fa-lock"></i></span>
+                            <input type="password" class="form-input" id="passwordInput" placeholder="Password" autocomplete="off">
+                            <div class="suggestion-list" id="passwordSuggestions">
+                                <div class="suggestion-item" data-value="**********">**********</div>
+                                <div class="suggestion-item" data-value="password123">password123</div>
+                                <div class="suggestion-item" data-value="mypassword">mypassword</div>
+                                <div class="suggestion-item" data-value="secretkey">secretkey</div>
+                                <div class="suggestion-item" data-value="userpass">userpass</div>
+                            </div>
+                        </div>
+                        <div class="forgot-password">
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">Login</button>
+                    
+                    <div class="divider">or</div>
+                    
+                    <div class="social-login">
+                     <button class="social-btn twitter-btn" type="button"><i class="fa-brands fa-twitter"></i></button>
+                        <button class="social-btn facebook-btn" type="button"><i class="fa-brands fa-facebook"></i></button>
+                    </div>
+                    
+                    <div class="signup-link">
+                        Don't have account? <a href="signup.html">Signup</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+        
+    </div>
+    </section>
+    <script>
+        
+        
+        // Handle password input suggestions
+        const passwordInput = document.getElementById('passwordInput');
+        const passwordSuggestions = document.getElementById('passwordSuggestions');
+        
+        passwordInput.addEventListener('focus', function() {
+            passwordSuggestions.classList.add('show');
+        });
+        
+        passwordInput.addEventListener('blur', function() {
+            setTimeout(() => {
+                passwordSuggestions.classList.remove('show');
+            }, 200);
+        });
+        
+        // Handle suggestion clicks
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('suggestion-item')) {
+                const value = e.target.getAttribute('data-value');
+                const parentContainer = e.target.closest('.input-container');
+                const input = parentContainer.querySelector('.form-input');
+                
+                if (input.type === 'password' && value === '**********') {
+                    input.value = 'anu45password';
+                } else {
+                    input.value = value;
+                }
+                
+                // Hide suggestions
+                parentContainer.querySelector('.suggestion-list').classList.remove('show');
+                input.focus();
+            }
+        });
+        
+        // Close suggestions when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.input-container')) {
+                document.querySelectorAll('.suggestion-list').forEach(list => {
+                    list.classList.remove('show');
+                });
+            }
+        });
+        
+        // Filter suggestions based on input
+        emailInput.addEventListener('input', function() {
+            const value = this.value.toLowerCase();
+            const suggestions = emailSuggestions.querySelectorAll('.suggestion-item');
+            
+            suggestions.forEach(item => {
+                const itemValue = item.getAttribute('data-value').toLowerCase();
+                if (itemValue.includes(value)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+  
+    
+    <script src="script.js"></script>
+</body>
+</html>

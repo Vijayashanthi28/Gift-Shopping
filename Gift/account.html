@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+   <!-- Floating particles -->
+    <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+    <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+    <div class="particle" style="left: 70%; animation-delay: 1s;"></div>
+    <div class="particle" style="left: 80%; animation-delay: 3s;"></div>
+    <div class="particle" style="left: 90%; animation-delay: 5s;"></div>
+
+    <!-- Header -->
+    <header class="nav-header">
+        <nav class="nav-container">
+            <div class="nav-logo">
+                <div class="navlogo-icon"><img src="nav logo.png"></div>
+                <span class="navlogo-text">Heartfelt Hues</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+               <a href="login.html"> <button class="login-btn">Login</button></a>
+               <a href="account.html"><button class="icon-btn"><i class="fa-solid fa-user"></i></button></a> 
+               <a href="cart.html"><button class="icon-btn"><i class="fa-solid fa-bag-shopping"></i></button></a> 
+            </div>
+        </nav>
+    </header>
+
+     <div class="account-container">
+        <div class="acc-header">
+            <h1>Account</h1>
+            <div class="user-info">
+                <div><i class="fa-solid fa-user"></i> Anu</div>
+                <div><i class="fa-solid fa-phone"></i> 9658743210</div>
+                <div><i class="fa-solid fa-envelope"></i> anu45@gmail.com</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="nav-buttons">
+                    <button class="nav-button active" onclick="showSection('wishlist')">Wishlist</button>
+                    <button class="nav-button" onclick="showSection('track-order')">Track Order</button>
+                  <a href="terms.html" style="text-decoration: none; color:#000;"> <button class="nav-button">Terms&Conditions</button></a> 
+                   <a href="privacy.html" style="text-decoration: none; color:#000;">  <button class="nav-button">Privacy Policy</button></a>
+                    <button class="nav-button" onclick="showSection('manage')">Manage Account</button>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <!-- Wishlist Section -->
+                <div id="wishlist" class="content-section active">
+                    <div class="wish-grid">
+                        <div class="wish-card">
+                            <div class="wish-image"><img src="h4.webp">
+                                <div style="  width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; font-weight: 600;">
+                                     Fridge Magnet
+                                </div>
+                                <div class="heart-icon">❤️</div>
+                            </div>
+                            <div class="wish-info">
+                                <h3 class="wish-title">Personalizd Fridge Magnet</h3>
+                                <div class="wish-price">Rs.325</div>
+                                <div class="rating">
+                                    <span class="star">⭐</span>
+                                    <span>4.8</span>
+                                </div>
+                                <div class="features">
+                                    <div class="feature">
+                                        <span>🎨</span>
+                                        <span>Personalizable</span>
+                                    </div>
+                                    <div class="feature">
+                                        <span>🚚</span>
+                                        <span>Same day Delivery</span>
+                                    </div>
+                                </div>
+                                <button class="view-details-btn">View Details</button>
+                            </div>
+                        </div>
+
+                        <div class="wish-card">
+                            <div class="wish-image"><img src="c2.webp">
+                                <div style=" width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; font-weight: 600;">
+                                     Desk Calendar
+                                </div>
+                                <div class="heart-icon">❤️</div>
+                            </div>
+                            <div class="wish-info">
+                                <h3 class="wish-title">Customized Desk Calander</h3>
+                                <div class="wish-price">Rs.1025</div>
+                                <div class="rating">
+                                    <span class="star">⭐</span>
+                                    <span>4.8</span>
+                                </div>
+                                <div class="features">
+                                    <div class="feature">
+                                        <span>🎨</span>
+                                        <span>Personalizable</span>
+                                    </div>
+                                    <div class="feature">
+                                        <span>🚚</span>
+                                        <span>Same day Delivery</span>
+                                    </div>
+                                </div>
+                                <button class="view-details-btn">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track Order Section -->
+                <div id="track-order" class="content-section">
+                    <div class="order-info">
+                        <div class="order-number">Order No : 567843</div>
+                        
+                        <div class="order-details">
+                            <div class="detail-label">Address</div>
+                            <div class="detail-value">65A, Ashok nagar, Madurai.</div>
+                            
+                            <div class="detail-label">Mobile no</div>
+                            <div class="detail-value">9087654321</div>
+                        </div>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="progress-track">
+                            <div class="progress-line">
+                                <div class="progress-fill"></div>
+                            </div>
+                            
+                            <div class="progress-step">
+                                <div class="step-circle completed">✓</div>
+                                <div class="step-label">Order placed</div>
+                            </div>
+                            
+                            <div class="progress-step">
+                                <div class="step-circle completed">✓</div>
+                                <div class="step-label">Preparing<br>Shipment</div>
+                            </div>
+                            
+                            <div class="progress-step">
+                                <div class="step-circle completed">✓</div>
+                                <div class="step-label">Shipped</div>
+                            </div>
+                            
+                            <div class="progress-step">
+                                <div class="step-circle pending">⏳</div>
+                                <div class="step-label">Delivered</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tracking-info">
+                        <div class="detail-label">Tracking Id :</div>
+                        <div class="detail-value">52147896324</div>
+                        
+                        <div class="detail-label">Delivery method :</div>
+                        <div class="detail-value">Ground Parcel</div>
+                    </div>
+
+                    <a href="index.html" class="homepage-link">Go to Homepage</a>
+                </div>
+
+                <!-- Other Sections -->
+                <div id="terms" class="content-section">
+                    <h2>Terms & Conditions</h2>
+                    <p>Terms and conditions content would go here...</p>
+                </div>
+
+                <div id="privacy" class="content-section">
+                    <h2>Privacy Policy</h2>
+                    <p>Privacy policy content would go here...</p>
+                </div>
+
+                <div id="manage" class="content-section">
+                    <h2>Manage Account</h2>
+                    <p>Account management options would go here...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <footer class="footer">
+    <div class="top-info">
+      <div>
+        <i class="fas fa-truck-fast"></i>
+        <h4>Fast Shipping</h4>
+        <p>Fast shipping on all orders</p>
+      </div>
+      <div>
+        <i class="fas fa-rotate-left"></i>
+        <h4>Easy Return</h4>
+        <p>We will arrange pickup if the product is defected or damaged</p>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>Subscribe</h4>
+        <p>Stay connected with our newest arrival</p>
+        <input type="email" placeholder="Email">
+        <button>Subscribe</button>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="account.html">Track My Order</a></li>
+          <li><a href="#">Manage Account</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="birthday.html">Birthday</a></li>
+          <li><a href="aniversary.html">Anniversary</a></li>
+          <li><a href="wedding.html">Wedding</a></li>
+          <li><a href="home.html">Home & Living</a></li>
+          <li><a href="corporate.html">Corporate</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-phone"></i> 9087654321</p>
+        <p><i class="fas fa-envelope"></i> hi@hearty.com</p>
+        <h4>Follow us</h4>
+        <div class="socials">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>Copyrights © 2014 Heartfelt Hues. all rights reserved.</p>
+    </div>
+  </footer>
+
+
+  
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.nav-button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Heart icon hover effect
+            const heartIcons = document.querySelectorAll('.heart-icon');
+            heartIcons.forEach(heart => {
+                heart.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.2)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 200);
+                });
+            });
+
+            // View Details button click effect
+            const viewButtons = document.querySelectorAll('.view-details-btn');
+            viewButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.innerHTML = 'Loading...';
+                    setTimeout(() => {
+                        this.innerHTML = 'View Details';
+                    }, 1000);
+                });
+            });
+        });
+        </script>
+
+          <script src="script.js"></script>
+</body>
+</html>
